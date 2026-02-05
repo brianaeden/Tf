@@ -18,15 +18,14 @@ body {
 
 /* HEADER */
 .site-header {
-  position: fixed;
+  position: relative;
   top: 0;
   width: 100%;
   padding: 18px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
+  background: rgba(0,0,0,0.3);
   z-index: 10;
 }
 
@@ -78,9 +77,9 @@ body {
 }
 
 /* BUTTON POSITIONS (adjust percentages to align with your background image) */
-.btn-explore { top: 38%; left: 50%; transform: translate(-50%, -50%); }
-.btn-join    { top: 38%; left: 65%; transform: translate(-50%, -50%); }
-.btn-learn   { top: 57%; left: 50%; transform: translate(-50%, -50%); }
+.btn-explore { top: 38.9%; left: 50%; transform: translate(-50%, -50%); }
+.btn-join    { top: 38.9%; left: 65%; transform: translate(-50%, -50%); }
+.btn-learn   { top: 56.5%; left: 50%; transform: translate(-50%, -50%); }
 
 /* FOOTER */
 .site-footer {
@@ -94,11 +93,23 @@ body {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links {
-    gap: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
   }
 
   .overlay-btn {
+    position: static; /* remove absolute positioning */
+    display: block;
+    width: 80%;
+    margin: 12px auto;
     padding: 12px 20px;
     font-size: 12px;
+    transform: none;
   }
+
+  .hero {
+    padding-top: 20px; /* space for header */
+  }
+}
+
 }
